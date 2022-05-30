@@ -31,7 +31,7 @@ const Home = () => {
         <FontAwesomeIcon icon={faBars} />
       </span>
       <img src={profile} alt="" />
-      <h1 class="text"></h1>
+      <h1 className="text"></h1>
     </main>
   );
 };

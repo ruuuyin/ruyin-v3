@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import BaseLayout from "./pages/BaseLayout";
-import Home from "./pages/Home";
 
 function App() {
   return (
