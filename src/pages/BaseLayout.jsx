@@ -6,13 +6,46 @@ import Home from "./Home";
 import Works from "./Works";
 
 const BaseLayout = () => {
+  const [navigatorVisible, setNavigatorVisible] = React.useState(false);
+
+  const _changeVisibility = () => {
+    setNavigatorVisible(!navigatorVisible);
+  };
+
   return (
     <>
-      <Navigator.Side />
+      <Navigator.Side
+        visible={navigatorVisible}
+        changeVisibility={_changeVisibility}
+      />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/works" element={<Works />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        <Route
+          path="/"
+          element={
+            <Home
+              navigatorVisible={navigatorVisible}
+              changeVisibility={_changeVisibility}
+            />
+          }
+        ></Route>
+        <Route
+          path="/works"
+          element={
+            <Works
+              navigatorVisible={navigatorVisible}
+              changeVisibility={_changeVisibility}
+            />
+          }
+        ></Route>
+        <Route
+          path="/about"
+          element={
+            <About
+              navigatorVisible={navigatorVisible}
+              changeVisibility={_changeVisibility}
+            />
+          }
+        ></Route>
       </Routes>
     </>
   );

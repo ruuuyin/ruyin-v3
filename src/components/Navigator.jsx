@@ -1,9 +1,11 @@
+import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import { HoverTextScramble } from "../utils/TextScramble";
 import Footer from "./Footer";
 
-const Side = () => {
+const Side = ({ visible, changeVisibility }) => {
   React.useEffect(() => {
     const el1 = document.querySelector(".text-scramble-home");
     const fx1 = new HoverTextScramble(el1);
@@ -27,15 +29,26 @@ const Side = () => {
     });
   }, []);
   return (
-    <nav>
+    <nav className={visible && "visible"}>
+      <span className="close" onClick={changeVisibility}>
+        <FontAwesomeIcon icon={faXmarkCircle} />
+      </span>
       <div className="links">
-        <Link className="text-scramble-home" to="/">
+        <Link className="text-scramble-home" to="/" onClick={changeVisibility}>
           Home
         </Link>
-        <Link className="text-scramble-works" to="works">
+        <Link
+          className="text-scramble-works"
+          to="works"
+          onClick={changeVisibility}
+        >
           Works
         </Link>
-        <Link className="text-scramble-about" to="about">
+        <Link
+          className="text-scramble-about"
+          to="about"
+          onClick={changeVisibility}
+        >
           About
         </Link>
       </div>

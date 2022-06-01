@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import resume from "./../assets/Resume.pdf";
 
-const About = () => {
+const About = ({ navigatorVisible, changeVisibility }) => {
   return (
     <main id="about">
-      <span className="menu">
+      <span className="menu" onClick={changeVisibility}>
         <FontAwesomeIcon icon={faBars} />
       </span>
       <h3>ABOUT</h3>

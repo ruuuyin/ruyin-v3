@@ -76,6 +76,10 @@ body {
                 font-size: 0.8rem;
             }
         }
+        .close {
+            visibility: hidden;
+            overflow: hidden;
+        }
     }
     main {
         width: 75%;
@@ -276,11 +280,31 @@ body {
         nav {
             visibility: hidden;
             overflow: hidden;
-            position: absolute;
+            position: fixed;
             height: 100vh;
-            width: 100%;
+            left: -100%;
+            min-width: 100%;
             z-index: 1;
             margin: 0;
+            transition: all 0.6s ease-in-out;
+            &.visible {
+                left: 0;
+                visibility: visible !important;
+                overflow: visible !important;
+            }
+
+            .close {
+                font-size: 2rem;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                transition: all 0.6s ease-in-out;
+                visibility: visible !important;
+                overflow: visible !important;
+                &:hover {
+                    transform: rotate(180deg);
+                }
+            }
         }
         main {
             width: 100%;

@@ -4,7 +4,7 @@ import TextScramble from "../utils/TextScramble";
 import profile from "./../assets/profile.jpg";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-const Home = () => {
+const Home = ({ navigatorVisible, changeVisibility }) => {
   const phrases = [
     "Hi!",
     "I'm Ralph Royeen A. Lagumen",
@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <main id="home">
-      <span className="menu">
+      <span className="menu" onClick={changeVisibility}>
         <FontAwesomeIcon icon={faBars} />
       </span>
       <img src={profile} alt="" />
